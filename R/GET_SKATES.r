@@ -165,6 +165,6 @@ CATCH<-rbind(CP_CATCH2,CV_CATCH)
 A_CATCH<-CATCH[,list(CATCH=sum(CATCH_WEIGHT)),by=c("NAMES","YEAR")]
 A_CATCH<-A_CATCH[order(YEAR,NAMES),]
 
-print(A_CATCH)
+write.csv(A_CATCH,"BSAI_SKATE_CATCH.csv")
 
 
