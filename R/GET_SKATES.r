@@ -19,12 +19,12 @@
   	akfin = DBI::dbConnect(odbc::odbc(), "akfin",
                       UID = akfin_user, PWD = akfin_pwd)
 ## pulling data using sql files
-	cas <- readLines('sql/BSAI_SKATE_CAS.sql')
+	cas <- readLines('SQL/BSAI_SKATE_CAS.sql')
 
 	CAS <- sql_run(akfin, cas) %>% 
   	  dplyr::rename_all(toupper)%>% data.table()
 
-	obs <- readLines('sql/BSAI_SKATE_OBS.sql')
+	obs <- readLines('SQL/BSAI_SKATE_OBS.sql')
 
 	OBS <- sql_run(afsc, obs) %>% 
   	  dplyr::rename_all(toupper) %>% data.table()
